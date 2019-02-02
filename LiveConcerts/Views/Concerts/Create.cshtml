@@ -1,0 +1,27 @@
+﻿@model  LiveConcerts.ViewModels.ConcertFormViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<form>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Venue)
+        @Html.TextBoxFor(c => c.Venue, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Date)
+        @Html.TextBoxFor(c => c.Date, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Time)
+        @Html.TextBoxFor(c => c.Time, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Genre)
+        @Html.DropDownListFor(c=>c.Genre , new SelectList(Model.Genres , "Id" , "Name" ),"" ,new { @class ="form-control"})
+    </div>
+</form>
